@@ -14,7 +14,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import createHistory from 'history/createBrowserHistory';
-import loadModels from 'models';
 
 // Import root app
 import App from 'containers/App';
@@ -38,6 +37,7 @@ import 'file-loader?name=[name].[ext]!./.htaccess';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import configureStore from './configureStore';
+import loadModels from './models';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
