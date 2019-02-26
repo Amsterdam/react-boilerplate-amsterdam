@@ -1,7 +1,7 @@
 
 # Starter project for Gemeente Amsterdam
 
-This project is based on the react boilerplate that was adapted for the needs of the municipality of Amsterdam. 
+This project is based on the react boilerplate that was adapted for the needs of the municipality of Amsterdam.
 See https://github.com/Amsterdam/react-boilerplate.git for more information on the react boilerplate
 
 ## Requirements
@@ -17,9 +17,13 @@ See https://github.com/Amsterdam/react-boilerplate.git for more information on t
 ## Testing
 - NODE_ENV=development npm run test
 
+## Code generation
+You can build quickly with 3 code generation types:
+- npm run generate ams-component: A dumb component will be created in the src/components directory with scss file.
+- npm run generate ams-component: A smart component will be created in the src/containers directory with actions, reducers and sagas if you want.
+- npm run generate ams-model: A model will be created in the models directory. It is a collection of action, reducer and saga. It can store data in redux without the need for a visible container.
 
 ## React boilerplate Documentation
-
 * [**The Hitchhikers Guide to `react-boilerplate`**](docs/general/introduction.md): An introduction for newcomers to this boilerplate.
 * [Overview](docs/general): A short overview of the included tools
 * [**Commands**](docs/general/commands.md): Getting the most out of this boilerplate
