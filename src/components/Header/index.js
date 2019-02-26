@@ -37,20 +37,20 @@ class Header extends React.Component { // eslint-disable-line react/prefer-state
                 </li>
                 {!this.props.isAuthenticated ?
                   <li>
-                    <a href="" onClick={(event) => this.props.onLoginLogoutButtonClick(event, 'datapunt')}>
+                    <a href="" className="header-component__login" onClick={(event) => this.props.onLoginLogoutButtonClick(event, 'datapunt')}>
                       {'Inloggen'}
                     </a>
                   </li> : ''}
                 {!this.props.isAuthenticated ?
                   <li>
-                    <a href="" onClick={(event) => this.props.onLoginLogoutButtonClick(event, 'grip')}>
+                    <a href="" className="header-component__login-adw" onClick={(event) => this.props.onLoginLogoutButtonClick(event, 'grip')}>
                       {'Inloggen ADW'}
                     </a>
                   </li> : ''
                 }
                 {this.props.isAuthenticated ?
                   <li>
-                    <a href="" onClick={this.props.onLoginLogoutButtonClick}>
+                    <a href="" className="header-component__logout" onClick={this.props.onLoginLogoutButtonClick}>
                       {'Uitloggen'}
                     </a>
                   </li> : ''}

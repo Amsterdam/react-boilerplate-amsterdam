@@ -34,6 +34,7 @@ export function* callLogout() {
     logout();
     yield put(push('/'));
   } catch (error) {
+    /* istanbul ignore next */
     yield put(showGlobalError('LOGOUT_FAILED'));
   }
 }
