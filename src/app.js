@@ -5,7 +5,6 @@
  * code.
  */
 
-
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
@@ -42,6 +41,7 @@ import 'stijl/dist/css/ams-stijl.css';
 import './global.scss';
 
 import configureStore from './configureStore';
+import loadModels from './models';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
@@ -54,6 +54,8 @@ const initialState = {};
 const history = createHistory();
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
+
+loadModels(store);
 
 const render = (messages) => {
   ReactDOM.render(
