@@ -1,5 +1,5 @@
 
-FROM node:8.9 AS builder
+FROM node:10.10 AS builder
 LABEL maintainer="datapunt@amsterdam.nl"
 
 ARG BUILD_ENV=prod
@@ -41,7 +41,7 @@ RUN npm cache clean --force
 
 # Build
 ENV NODE_ENV=production
-RUN echo "run build"
+RUN echo "run build" ${BUILD_ENV}
 # RUN npm rebuild node-sass
 RUN npm run build:${BUILD_ENV}
 RUN echo "build ${BUILD_NUMBER} - `date`" > /app/build/version.txt

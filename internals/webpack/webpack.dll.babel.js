@@ -29,6 +29,9 @@ module.exports = require('./webpack.base.babel')({
     library: '[name]',
   },
   plugins: [
+    // Fixes warning in moment-with-locales.min.js
+    //   Module not found: Error: Can't resolve './locale' in ...
+    // new webpack.IgnorePlugin(/\.\/locale$/),
     new webpack.DllPlugin({
       name: '[name]',
       path: join(outputPath, '[name].json'),

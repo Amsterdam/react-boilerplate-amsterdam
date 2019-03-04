@@ -11,7 +11,7 @@ import { createSelector } from 'reselect';
 import { changeLocale } from '../LanguageProvider/actions';
 import { makeSelectLocale } from '../LanguageProvider/selectors';
 
-export class LocaleToggle extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+export class LocaleToggle extends React.Component { // eslint-disable-line react/prefer-stateless-function
   // TODO: the switching between locale and the displaylocalename can be prettier
   onToggle(locale) {
     let switchTo;
