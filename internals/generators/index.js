@@ -45,7 +45,7 @@ module.exports = (plop) => {
   plop.setActionType('prettify', (answers, config) => {
     const folderPath = `${path.join(
       __dirname,
-      '/../../app/',
+      '/../../src/',
       config.path,
       plop.getHelper('properCase')(answers.name),
       '**.js',

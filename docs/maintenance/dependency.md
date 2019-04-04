@@ -223,8 +223,8 @@ react-test-renderer                                     15.5.4
     @ ./~/react-router-scroll/lib/ScrollBehaviorContext.js
     @ ./~/react-router-scroll/lib/useScroll.js
     @ ./~/react-router-scroll/lib/index.js
-    @ ./app/app.js
-    @ multi ./app/app.js
+    @ ./src/app.js
+    @ multi ./src/app.js
 ```
 
 - `history` Incompatible
@@ -242,7 +242,7 @@ Addressed here https://github.com/imagemin/imagemin-pngquant/issues/32 **_Needs 
 
   Addressed here https://github.com/imagemin/imagemin-pngquant/issues/32, but throws warnings (below)
 
-  In ./app/components/Header/banner.jpg
+  In ./src/components/Header/banner.jpg
   Module build failed: Error: dyld: Library not loaded: /usr/local/opt/libpng/lib/libpng16.16.dylib
   Referenced from: ~/react-boilerplate/node_modules/mozjpeg/vendor/cjpeg
   Reason: image not found
@@ -252,17 +252,17 @@ Addressed here https://github.com/imagemin/imagemin-pngquant/issues/32 **_Needs 
 
 - Warning: Observed on `npm start`
 
-  WARNING in ./app/components/Header/banner.jpg
+  WARNING in ./src/components/Header/banner.jpg
   DEPRECATED. Configure gifsicle's interlaced option in it's own options. (gifsicle.interlaced)
-  @ ./app/components/Header/index.js 47:0-34
-  @ ./app/containers/App/index.js
-  @ ./app/app.js
-  @ multi eventsource-polyfill webpack-hot-middleware/client?reload=true ./app/app.js
-  WARNING in ./app/components/Header/banner.jpg
+  @ ./src/components/Header/index.js 47:0-34
+  @ ./src/containers/App/index.js
+  @ ./src/app.js
+  @ multi eventsource-polyfill webpack-hot-middleware/client?reload=true ./src/app.js
+  WARNING in ./src/components/Header/banner.jpg
   DEPRECATED. Configure optipng's optimizationLevel option in it's own options. (optipng.optimizationLevel)
-  @ ./app/components/Header/index.js 47:0-34
-  @ ./app/containers/App/index.js
-  @ ./app/app.js
-  @ multi eventsource-polyfill webpack-hot-middleware/client?reload=true ./app/app.js
+  @ ./src/components/Header/index.js 47:0-34
+  @ ./src/containers/App/index.js
+  @ ./src/app.js
+  @ multi eventsource-polyfill webpack-hot-middleware/client?reload=true ./src/app.js
 
   **_image-webpack-loader 2.0.0 → 3.2.0 <--- Rolled back_**

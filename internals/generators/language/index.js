@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 
 function languageIsSupported(language) {
   try {
-    fs.accessSync(`app/translations/${language}.json`, fs.F_OK);
+    fs.accessSync(`src/translations/${language}.json`, fs.F_OK);
     return true;
   } catch (e) {
     return false;
