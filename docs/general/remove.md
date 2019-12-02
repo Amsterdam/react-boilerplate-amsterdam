@@ -5,20 +5,19 @@ application available when the users network connection isn't perfect.
 
 To remove offline capability, delete the `offline-plugin` from the
 [`package.json`](../../package.json), remove the import of the plugin in
-[`app.js`](../../app/app.js) and remove the plugin from the
+[`app.js`](../../src/app.js) and remove the plugin from the
 [`webpack.prod.babel.js`](../../internals/webpack/webpack.prod.babel.js).
 
 ### Removing add to homescreen functionality
 
-Delete [`manifest.json`](../../app/manifest.json) and remove the
-`<link rel="manifest" href="manifest.json">` tag from the
-[`index.html`](../../app/index.html).
+Delete `webpack-pwa-manifest` from the the list of plugins in
+[`webpack.prod.babel.js`](../../internals/webpack/webpack.prod.babel.js).
 
 ### Removing performant web font loading
 
 **Careful** about removing this, as perceived performance might be highly impacted.
 
-To remove `FontFaceObserver`, don't import it in [`app.js`](../../app/app.js) and
+To remove `FontFaceObserver`, don't import it in [`app.js`](../../src/app.js) and
 remove it from the [`package.json`](../../package.json).
 
 ### Removing image optimization

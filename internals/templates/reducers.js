@@ -7,6 +7,10 @@ import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
 
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
+import { connectRouter } from 'connected-react-router/immutable';
+
+import history from 'utils/history';
+
 
 /*
  * routeReducer
@@ -37,12 +41,16 @@ function routeReducer(state = routeInitialState, action) {
 }
 
 /**
- * Creates the main reducer with the dynamically injected ones
+ * Merges the main reducer with the router state and dynamically injected reducers
  */
-export default function createReducer(injectedReducers) {
-  return combineReducers({
+export default function createReducer(injectedReducers = {}) {
+  const rootReducer = combineReducers({
     route: routeReducer,
     language: languageProviderReducer,
     ...injectedReducers,
   });
+
+  // Wrap the root reducer and return a new root reducer with router state
+  const mergeWithRouterState = connectRouter(history);
+  return mergeWithRouterState(rootReducer);
 }

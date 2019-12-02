@@ -3,9 +3,9 @@
  *
  * Exports the generators so plop knows them
  */
-
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
 // const componentGenerator = require('./component/index.js');
 // const containerGenerator = require('./container/index.js');
 // const languageGenerator = require('./language/index.js');
@@ -22,7 +22,10 @@ module.exports = (plop) => {
   plop.setGenerator('ams-model', dpModelGenerator);
   plop.addHelper('directory', (comp) => {
     try {
-      fs.accessSync(path.join(__dirname, `../../src/containers/${comp}`), fs.F_OK);
+      fs.accessSync(
+        path.join(__dirname, `../../src/containers/${comp}`),
+        fs.F_OK,
+      );
       return `containers/${comp}`;
     } catch (e) {
       return `components/${comp}`;
@@ -37,5 +40,17 @@ module.exports = (plop) => {
       .replace(/([0-9])([^0-9])/g, '$1-$2')
       .replace(/([^0-9])([0-9])/g, '$1-$2')
       .replace(/-+/g, '-')
-        .toLowerCase());
+      .toLowerCase(),
+  );
+  plop.setActionType('prettify', (answers, config) => {
+    const folderPath = `${path.join(
+      __dirname,
+      '/../../src/',
+      config.path,
+      plop.getHelper('properCase')(answers.name),
+      '**.js',
+    )}`;
+    exec(`npm run prettify -- "${folderPath}"`);
+    return folderPath;
+  });
 };

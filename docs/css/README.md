@@ -22,7 +22,13 @@ Watch this video for a comparison and to see how it enforces best practices!
 
 [![Styled-components: Enforcing best practices](http://img.youtube.com/vi/jaqDA7Btm3c/0.jpg)](https://youtu.be/jaqDA7Btm3c)
 
-To supplement `styled-components`, this boilerplate also uses
+### Linting
+
+To complement `styled-components`, this boilerplate also has a CSS linting setup. It uses `stylelint` which will help you stay consistent with modern CSS standards. Read about it [here](linting.md).
+
+### sanitize.css
+
+In addition, this boilerplate also uses
 [`sanitize.css`](https://github.com/jonathantneal/sanitize.css)
 to make browsers render all elements more consistently and in line with modern standards,
 it's a modern alternative to CSS resets. More info available on the [`sanitize.css` page](sanitize.md).
@@ -67,16 +73,17 @@ class Button extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Title>Hello {this.props.name}, this is your first styled component!</Title>
+        <Title>
+          Hello {this.props.name}, this is your first styled component!
+        </Title>
         ...
       </Wrapper>
     );
   }
 }
-
 ```
 
-*(The CSS rules are automatically vendor prefixed, so you don't have to think about it!)*
+_(The CSS rules are automatically vendor prefixed, so you don't have to think about it!)_
 
 > For more information about `styled-components` see https://github.com/styled-components/styled-components
 
@@ -112,7 +119,7 @@ class Button extends React.Component {
 
 ### Setup
 
-Modify [`webpack.base.babel.js`][WebpackConfig]
+Modify [`webpack.base.babel.js`][webpackconfig]
 to look like:
 
 ```diff
@@ -172,7 +179,7 @@ Install `sass-loader` and the `node-sass` dependancy.
 npm i -D sass-loader node-sass
 ```
 
-Modify [`webpack.base.babel.js`][WebpackConfig]
+Modify [`webpack.base.babel.js`][webpackconfig]
 to look like:
 
 ```diff
@@ -219,7 +226,7 @@ Install `less-loader` and the `less` dependancy.
 npm i -D less-loader less
 ```
 
-Modify [`webpack.base.babel.js`][WebpackConfig]
+Modify [`webpack.base.babel.js`][webpackconfig]
 to look like:
 
 ```diff
@@ -266,4 +273,4 @@ class Button extends React.Component {
 
 > For more information about LESS and the `less-loader` see https://github.com/webpack-contrib/less-loader.
 
-[WebpackConfig]: ../../internals/webpack/webpack.base.babel.js "Webpack config"
+[webpackconfig]: ../../internals/webpack/webpack.base.babel.js 'Webpack config'
